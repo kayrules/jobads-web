@@ -1,0 +1,23 @@
+{{template "head" .}}
+    <div class="box">
+        {{ if index . "message" }}
+        <div class="alert alert-danger" role="alert">
+            {{ index . "message" }}
+        </div>
+        {{ end }}
+        <h3>Demo Login</h3>
+        <form method="POST" action="/login">
+            <select name="username" class="form-control" placeholder="Username">
+                <option value="">Username</option>
+                <option value="unilever">UNILEVER</option>
+                <option value="apple">APPLE</option>
+                <option value="nike">NIKE</option>
+                <option value="ford">FORD</option>
+                <option value="other">ABC Enterprise</option>
+            </select>
+            <input type="password" name="password" class="form-control" placeholder="Password" value="******" disabled />
+
+            <input type="submit" name="submit" value="Log In" class="btn btn-primary" />
+        </form>
+    </div>
+{{template "footer" .}}
